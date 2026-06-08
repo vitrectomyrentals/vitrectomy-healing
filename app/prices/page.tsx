@@ -37,9 +37,9 @@ const packages = [
     price: "$295",
     duration: "/ 1st Week",
     ctaTheme: "teal",
-    image: "/chair.jpg",
+    image: "/seated3.webp",
     imageAlt: "Face down chair included with the Essential Support Package",
-    imageClassName: "object-cover object-[center_25%]",
+    imageClassName: "object-cover object-[center_48%]",
     orderClassName: "order-2 lg:order-none",
     features: [
       "1 Seated Device (Face Down Chair or Portable Seated Support)",

@@ -35,9 +35,9 @@ const packages = [
     price: "$295",
     duration: "/ 1st Week",
     ctaTheme: "teal",
-    image: "/chair.jpg",
+    image: "/seated3.webp",
     imageAlt: "Face down chair included with the Essential Support Package",
-    imageClassName: "object-cover object-[center_25%]",
+    imageClassName: "object-cover object-[center_48%]",
     orderClassName: "order-2 lg:order-none",
     features: [
       "1 Seated Device (Face Down Chair or Portable Seated Support)",
@@ -229,7 +229,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="relative aspect-[1.04/1] overflow-hidden rounded-xl bg-neutral-100 shadow-xl shadow-neutral-950/10">
             <Image
-              src="/chair.jpg"
+              src="/seated2.webp"
               alt="Patient using a seated face down chair rental for retina surgery recovery"
               fill
               quality={92}
