@@ -111,15 +111,8 @@ export default function PricesPage() {
             {packages.map((pkg) => (
               <article
                 key={pkg.title}
-                className={`relative flex flex-col rounded-lg border bg-white p-4 shadow-sm sm:p-5 lg:p-6 ${pkg.orderClassName} ${
-                  pkg.featured ? "border-teal-400 ring-1 ring-teal-400" : "border-neutral-200"
-                }`}
+                className={`relative flex flex-col rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5 lg:p-6 ${pkg.orderClassName}`}
               >
-                {pkg.label ? (
-                  <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-400 px-5 py-2 text-[0.65rem] font-black uppercase leading-tight tracking-[0.18em] text-white sm:px-6 sm:py-2.5 sm:text-xs">
-                    {pkg.label}
-                  </div>
-                ) : null}
                 <div className="relative mb-4 h-52 overflow-hidden rounded-lg bg-neutral-100 sm:mb-5 sm:h-56 lg:h-60">
                   <Image
                     src={pkg.image}
