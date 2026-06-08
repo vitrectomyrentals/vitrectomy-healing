@@ -13,61 +13,42 @@ export const metadata: Metadata = buildMetadata({
 
 const packages = [
   {
-    title: "Full Support Package",
+    title: "Comfort Package",
     subtitle: "Complete seated and sleep support for face-down recovery",
     price: "$395",
     duration: "/ 1st Week",
     ctaTheme: "dark",
     image: "/sleep2.jpg",
-    imageAlt: "Face down recovery bed included with the Full Support Package",
+    imageAlt: "Face down recovery bed included with the Comfort Package",
     imageClassName: "object-cover object-[center_45%]",
-    orderClassName: "order-2 lg:order-none",
+    orderClassName: "order-1 lg:order-none",
     features: [
       "2 Seated Devices (Face Down Chair & Portable Seated Support)",
       "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Headrest fitted sheets included",
-      "Free Delivery, Set Up & Pick Up (within 30 km)",
+      "Headrest fitted sheets (1 per device)",
+      "Delivery, Set Up & Pick Up (free within 30 km)",
     ],
     exclusions: ["2nd week: $200 + tax"],
   },
   {
-    label: "Most Popular",
     title: "Essential Support Package",
     subtitle: "Core face-down equipment for focused recovery",
     price: "$295",
     duration: "/ 1st Week",
-    featured: true,
     ctaTheme: "teal",
     image: "/chair.jpg",
     imageAlt: "Face down chair included with the Essential Support Package",
     imageClassName: "object-cover object-[center_25%]",
-    orderClassName: "order-1 lg:order-none",
+    orderClassName: "order-2 lg:order-none",
     features: [
       "1 Seated Device (Face Down Chair or Portable Seated Support)",
       "1 Sleep Device (Mattress Attachment or Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Headrest fitted sheets included",
-      "Flexible pickup or delivery options",
+      "Headrest fitted sheets (1 per device)",
+      "Delivery, Set Up & Pick Up not included",
     ],
-    exclusions: ["Delivery, setup & pickup not included", "2nd week: $150 + tax"],
-  },
-  {
-    title: "Custom Quote",
-    subtitle: "Personalized support for your surgery timeline",
-    price: "Call",
-    duration: "/ Quote",
-    ctaTheme: "dark",
-    image: "/seated3.webp",
-    imageAlt: "Portable seated face down support available for custom vitrectomy recovery rentals",
-    imageClassName: "object-cover object-[center_48%]",
-    orderClassName: "order-3 lg:order-none",
-    features: [
-      "Early pre-surgery delivery available",
-      "Rental extensions arranged around your recovery",
-      "Price matching available",
-      "Discounts considered for financial difficulty",
-    ],
+    exclusions: ["2nd week: $150 + tax"],
   },
 ];
 
@@ -126,7 +107,7 @@ export default function PricesPage() {
             Choose the recovery package that best fits your needs
           </h1>
 
-          <div className="mx-auto mt-7 grid max-w-7xl gap-6 sm:mt-9 lg:grid-cols-3 lg:items-stretch lg:gap-6">
+          <div className="mx-auto mt-7 grid max-w-5xl gap-6 sm:mt-9 lg:grid-cols-2 lg:items-stretch lg:gap-6">
             {packages.map((pkg) => (
               <article
                 key={pkg.title}
