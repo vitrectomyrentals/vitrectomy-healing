@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 
-const baseUrl = "https://facedownrecoveryrentals.com";
+const baseUrl = "https://www.vitrectomyhealing.com";
 
 const staticRoutes: Array<{ path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }> = [
   { path: "", priority: 1, changeFrequency: "weekly" },

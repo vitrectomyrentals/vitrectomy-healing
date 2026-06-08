@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { buildMetadata } from "../lib/seo";
+import { buildMetadata, contactEmail, displayPhoneNumber, phoneNumber } from "../lib/seo";
 import { agreementBullets } from "./agreementTerms";
 import { RentalAgreementForm } from "./RentalAgreementForm";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Rental Agreement | Face Down Recovery Rentals",
-  description: "Face Down Recovery Rentals rental agreement and electronic signature form.",
+  title: "Rental Agreement | Vitrectomy Healing",
+  description: "Vitrectomy Healing rental agreement and electronic signature form.",
   path: "/rental-agreement",
   noIndex: true,
 });
@@ -21,11 +21,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function RentalAgreementPage() {
 
       <section className="bg-neutral-100 px-5 py-12 sm:px-8 lg:py-16">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-teal-700">Face Down Recovery Rentals</p>
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-teal-700">Vitrectomy Healing</p>
           <h1 className="mt-4 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-6xl">
             Rental Agreement
           </h1>

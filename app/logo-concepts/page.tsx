@@ -3,8 +3,8 @@ import Link from "next/link";
 import { buildMetadata } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Logo Concepts | Face Down Recovery Rentals",
-  description: "Navbar-size logo concept previews for Face Down Recovery Rentals.",
+  title: "Logo Concepts | Vitrectomy Healing",
+  description: "Navbar-size logo concept previews for Vitrectomy Healing.",
   path: "/logo-concepts",
   noIndex: true,
 });
@@ -27,9 +27,9 @@ function ConceptOne() {
         />
       </svg>
       <span className="leading-none">
-        <span className="block text-xl font-black uppercase tracking-[0.18em] text-white">Face Down</span>
+        <span className="block text-xl font-black uppercase tracking-[0.18em] text-white">Vitrectomy</span>
         <span className="mt-1 block text-sm font-black uppercase tracking-[0.34em] text-teal-300">
-          Recovery Rentals
+          Healing
         </span>
       </span>
     </div>
@@ -52,9 +52,9 @@ function ConceptTwo() {
         />
       </svg>
       <span className="leading-none">
-        <span className="block text-xl font-black uppercase tracking-[0.2em] text-white">FDR</span>
+        <span className="block text-xl font-black uppercase tracking-[0.2em] text-white">VH</span>
         <span className="mt-1 block text-sm font-black uppercase tracking-[0.26em] text-teal-300">
-          Face Down Recovery
+          Recovery Equipment
         </span>
       </span>
     </div>
@@ -80,9 +80,9 @@ function ConceptThree() {
         />
       </svg>
       <span className="leading-none">
-        <span className="block text-xl font-black uppercase tracking-[0.18em] text-white">Face Down</span>
+        <span className="block text-xl font-black uppercase tracking-[0.18em] text-white">Vitrectomy</span>
         <span className="mt-1 block text-sm font-black uppercase tracking-[0.34em] text-teal-300">
-          Recovery Rentals
+          Healing
         </span>
       </span>
     </div>

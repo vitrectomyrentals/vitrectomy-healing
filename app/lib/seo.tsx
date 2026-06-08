@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
-export const siteUrl = "https://facedownrecoveryrentals.com";
-export const siteName = "Face Down Recovery Rentals";
-export const phoneNumber = "+14693001867";
-export const contactEmail = "info@fdrrentals.com";
+export const siteUrl = "https://www.vitrectomyhealing.com";
+export const siteName = "Vitrectomy Healing";
+export const phoneNumber = "+17802972526";
+export const displayPhoneNumber = "(780) 297-2526";
+export const contactEmail = "info@vitrectomyhealing.com";
 export const ogImage = "/hero2.jpg";
 
 type PageSeo = {
@@ -33,13 +34,13 @@ export function buildMetadata({ title, description, path = "", noIndex = false, 
       url,
       siteName,
       type,
-      locale: "en_US",
+      locale: "en_CA",
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "Face down recovery equipment rental setup for Dallas-Fort Worth patients",
+          alt: "Vitrectomy recovery equipment rental setup for Canadian patients",
         },
       ],
     },
@@ -73,14 +74,29 @@ export function JsonLd({ data }: { data: Record<string, unknown> | Record<string
 }
 
 export const serviceAreas = [
-  "Dallas",
-  "Fort Worth",
-  "Plano",
-  "Irving",
-  "Arlington",
-  "Frisco",
-  "Dallas-Fort Worth",
-  "DFW",
+  "Calgary",
+  "Edmonton",
+  "Red Deer",
+  "Airdrie",
+  "Saskatoon",
+  "Regina",
+  "Winnipeg",
+  "Burnaby",
+  "New Westminster",
+  "Richmond",
+  "Surrey",
+  "Vancouver",
+  "Victoria",
+  "Toronto",
+  "Ottawa",
+  "Hamilton",
+  "Burlington",
+  "Oakville",
+  "Milton",
+  "Mississauga",
+  "Brantford",
+  "Cambridge",
+  "Windsor",
 ];
 
 export function localBusinessSchema() {
@@ -96,14 +112,14 @@ export function localBusinessSchema() {
     logo: absoluteUrl("/icon.svg"),
     priceRange: "$$",
     description:
-      "Face down recovery equipment rentals with home delivery and setup throughout Dallas-Fort Worth for vitrectomy and retina surgery recovery.",
+      "Canadian vitrectomy recovery equipment rentals with delivery, setup, and pickup for face-down retina surgery recovery.",
     areaServed: serviceAreas.map((area) => ({
       "@type": "Place",
       name: area,
     })),
     serviceArea: {
       "@type": "AdministrativeArea",
-      name: "Dallas-Fort Worth, TX",
+      name: "Canada",
     },
     knowsAbout: [
       "face down recovery equipment",
@@ -119,7 +135,7 @@ export function localBusinessSchema() {
           "@type": "Service",
           name: "Face down recovery equipment rental",
           serviceType: "Medical recovery equipment rental",
-          areaServed: "Dallas-Fort Worth",
+          areaServed: "Canada",
         },
       },
     ],

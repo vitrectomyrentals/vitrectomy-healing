@@ -2,71 +2,72 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata } from "../lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata, displayPhoneNumber, phoneNumber } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Face Down Recovery Equipment Rental Prices | Dallas-Fort Worth",
+  title: "Vitrectomy Recovery Equipment Rental Prices | Canada",
   description:
-    "Compare Dallas-Fort Worth face down recovery equipment rental packages for vitrectomy recovery, including face down chairs, beds, mattress attachments, mirrors, delivery, setup, and pickup.",
+    "Compare Canadian vitrectomy recovery equipment rental packages, including face down chairs, beds, mattress attachments, mirrors, delivery, setup, and pickup.",
   path: "/prices",
 });
 
 const packages = [
   {
-    title: "Extended Comfort Package",
-    subtitle: "Everything you need for a more comfortable recovery",
-    price: "$495",
-    duration: "/ 10 Days",
+    title: "Full Support Package",
+    subtitle: "Complete seated and sleep support for face-down recovery",
+    price: "$395",
+    duration: "/ 1st Week",
     ctaTheme: "dark",
     image: "/sleep2.jpg",
-    imageAlt: "Face down recovery bed included with the Extended Comfort Package",
+    imageAlt: "Face down recovery bed included with the Full Support Package",
     imageClassName: "object-cover object-[center_45%]",
     orderClassName: "order-2 lg:order-none",
     features: [
       "2 Seated Devices (Face Down Chair & Portable Seated Support)",
       "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
-      "Free Delivery, Set Up & Pick Up (within 20 miles)",
+      "Headrest fitted sheets included",
+      "Free Delivery, Set Up & Pick Up (within 30 km)",
     ],
+    exclusions: ["2nd week: $200 + tax"],
   },
   {
     label: "Most Popular",
-    title: "Complete Comfort Package",
-    subtitle: "Everything you need for a more comfortable recovery",
-    price: "$395",
-    duration: "/ 1 Week",
+    title: "Essential Support Package",
+    subtitle: "Core face-down equipment for focused recovery",
+    price: "$295",
+    duration: "/ 1st Week",
     featured: true,
     ctaTheme: "teal",
     image: "/chair.jpg",
-    imageAlt: "Face down chair included with the Complete Comfort Package",
+    imageAlt: "Face down chair included with the Essential Support Package",
     imageClassName: "object-cover object-[center_25%]",
     orderClassName: "order-1 lg:order-none",
-    features: [
-      "2 Seated Devices (Face Down Chair & Portable Seated Support)",
-      "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
-      "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
-      "Free Delivery, Set Up & Pick Up (within 20 miles)",
-    ],
-  },
-  {
-    title: "Core Recovery Package",
-    subtitle: "Essential face down equipment",
-    price: "$295",
-    duration: "/ 1 Week",
-    ctaTheme: "dark",
-    image: "/seated3.webp",
-    imageAlt: "Portable seated face down support included with the Core Recovery Package",
-    imageClassName: "object-cover object-[center_48%]",
-    orderClassName: "order-3 lg:order-none",
     features: [
       "1 Seated Device (Face Down Chair or Portable Seated Support)",
       "1 Sleep Device (Mattress Attachment or Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
+      "Headrest fitted sheets included",
+      "Flexible pickup or delivery options",
     ],
-    exclusions: ["Delivery not included"],
+    exclusions: ["Delivery, setup & pickup not included", "2nd week: $150 + tax"],
+  },
+  {
+    title: "Custom Quote",
+    subtitle: "Personalized support for your surgery timeline",
+    price: "Call",
+    duration: "/ Quote",
+    ctaTheme: "dark",
+    image: "/seated3.webp",
+    imageAlt: "Portable seated face down support available for custom vitrectomy recovery rentals",
+    imageClassName: "object-cover object-[center_48%]",
+    orderClassName: "order-3 lg:order-none",
+    features: [
+      "Early pre-surgery delivery available",
+      "Rental extensions arranged around your recovery",
+      "Price matching available",
+      "Discounts considered for financial difficulty",
+    ],
   },
 ];
 
@@ -92,10 +93,10 @@ export default function PricesPage() {
     itemListElement: packages.map((pkg) => ({
       "@type": "Offer",
       name: pkg.title,
-      price: pkg.price.replace("$", ""),
-      priceCurrency: "USD",
+      price: pkg.price.startsWith("$") ? pkg.price.replace("$", "") : undefined,
+      priceCurrency: "CAD",
       availability: "https://schema.org/InStock",
-      areaServed: "Dallas-Fort Worth",
+      areaServed: "Canada",
       description: `${pkg.subtitle}. ${pkg.features.join("; ")}.`,
       itemOffered: {
         "@type": "Service",
@@ -170,19 +171,19 @@ export default function PricesPage() {
                   ))}
                 </ul>
                 <a
-                  href="tel:+14693001867"
+                  href={`tel:${phoneNumber}`}
                   className={`mt-4 flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-center font-serif text-sm font-bold uppercase tracking-wide text-white sm:mt-5 sm:min-h-14 ${
                     pkg.ctaTheme === "teal" ? "bg-teal-400 hover:bg-teal-500" : "bg-neutral-950 hover:bg-neutral-800"
                   }`}
                 >
-                  Call to Reserve: (469) 300-1867
+                  Call to Reserve: {displayPhoneNumber}
                 </a>
               </article>
             ))}
           </div>
 
           <p className="mx-auto mt-5 max-w-7xl text-center font-serif text-sm font-bold text-neutral-800 sm:text-base">
-            * $175/additional week if needed.
+            * Taxes apply. Please call for custom quotes, delivery details, and extension timing.
           </p>
 
           <div className="mt-7 text-center">

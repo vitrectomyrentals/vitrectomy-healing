@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "../../components/SiteHeader";
-import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata } from "../../lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata, contactEmail, displayPhoneNumber, phoneNumber, siteName, siteUrl } from "../../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "How to Sleep After Vitrectomy Surgery | Face Down Recovery Guide",
   description:
-    "Learn how to sleep after vitrectomy surgery, why face down positioning matters, and how recovery equipment can help Dallas-Fort Worth patients stay more comfortable.",
+    "Learn how to sleep after vitrectomy surgery, why face down positioning matters, and how recovery equipment can help Canadian patients stay more comfortable.",
   path: "/recovery-guides/how-to-sleep-after-vitrectomy-surgery",
   type: "article",
 });
@@ -20,11 +20,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>
@@ -78,11 +78,11 @@ export default function SleepAfterVitrectomyArticlePage() {
     mainEntityOfPage: absoluteUrl("/recovery-guides/how-to-sleep-after-vitrectomy-surgery"),
     author: {
       "@type": "Organization",
-      name: "Face Down Recovery Rentals",
+      name: siteName,
       url: absoluteUrl(),
     },
     publisher: {
-      "@id": "https://facedownrecoveryrentals.com/#localbusiness",
+      "@id": `${siteUrl}/#localbusiness`,
     },
     about: [
       "vitrectomy recovery",
@@ -218,9 +218,9 @@ export default function SleepAfterVitrectomyArticlePage() {
                 long periods of positioning.
               </p>
               <p>
-                At FDR Rentals, we provide clean, sanitized face down recovery equipment delivered throughout
-                Dallas-Fort Worth for vitrectomy and retina surgery patients. Equipment is delivered, set up, and picked
-                up directly from your home to help simplify the recovery process.
+                At Vitrectomy Healing, we provide clean, sanitized face down recovery equipment for Canadian vitrectomy
+                and retina surgery patients. Equipment can be delivered, set up, and picked up directly from your home
+                to help simplify the recovery process.
               </p>
             </section>
 
@@ -250,8 +250,8 @@ export default function SleepAfterVitrectomyArticlePage() {
                 significantly more comfortable and help reduce unnecessary stress during healing.
               </p>
               <p>
-                If you need face down recovery equipment delivered anywhere in Dallas-Fort Worth, FDR Rentals provides
-                premium recovery equipment with delivery, setup, and pickup throughout DFW.
+                If you need face down recovery equipment in a Canadian service area, Vitrectomy Healing provides premium
+                recovery equipment with delivery, setup, and pickup options.
               </p>
             </section>
 
@@ -260,7 +260,7 @@ export default function SleepAfterVitrectomyArticlePage() {
                 href="/contact"
                 className="inline-flex bg-neutral-950 px-7 py-4 font-sans text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-neutral-800"
               >
-                Contact FDR Rentals
+                Contact Vitrectomy Healing
               </Link>
             </div>
           </div>

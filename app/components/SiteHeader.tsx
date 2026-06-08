@@ -37,7 +37,7 @@ export function SiteHeader({ contactStyle = "filled" }: { contactStyle?: "filled
         <Link
           href="/"
           className="flex items-center gap-2 sm:gap-4"
-          aria-label="Face Down Recovery Rentals home"
+          aria-label="Vitrectomy Healing home"
           onClick={() => {
             setMenuOpen(false);
             window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -49,10 +49,10 @@ export function SiteHeader({ contactStyle = "filled" }: { contactStyle?: "filled
           <span className="hidden h-12 w-px bg-white/25 sm:block" />
           <span className="leading-none">
             <span className="block text-base font-black uppercase tracking-[0.14em] text-white sm:text-2xl sm:tracking-[0.18em]">
-              Face Down
+              Vitrectomy
             </span>
             <span className="mt-1 block text-[0.65rem] font-black uppercase tracking-[0.24em] text-teal-300 sm:text-base sm:tracking-[0.38em]">
-              Recovery Rentals
+              Healing
             </span>
           </span>
         </Link>
