@@ -33,38 +33,38 @@ function Footer() {
 }
 
 const positionTips = [
-  "how many hours per day positioning is required",
-  "how long recovery positioning should continue",
-  "whether side sleeping is allowed during recovery",
+  "the number of hours each day you should stay positioned",
+  "how many days or weeks your positioning plan should continue",
+  "which sleeping positions, including side sleeping, are acceptable for your case",
 ];
 
 const comfortTips = [
-  "sleeping slightly inclined",
-  "using specialized face down support cushions",
-  "alternating approved positions if permitted by their surgeon",
+  "resting at a slight incline if your surgeon allows it",
+  "using purpose-built face-down cushions or supports",
+  "rotating between approved positions when your care team says it is safe",
 ];
 
 const challenges = [
-  "neck stiffness",
-  "shoulder tension",
-  "lower back soreness",
-  "difficulty eating, reading, or watching television comfortably",
-  "trouble sleeping through the night",
+  "stiffness through the neck",
+  "tightness in the shoulders",
+  "soreness in the lower back",
+  "difficulty reading, eating, or watching TV while positioned",
+  "waking often or struggling to settle overnight",
 ];
 
 const equipment = [
-  "face down recovery chairs",
-  "face down table/bed",
-  "2-way mirror for watching TV or interacting with others",
-  "portable seated support to use on desk/table or in the car",
+  "face-down recovery chairs for daytime sitting",
+  "a face-down bed or table-style sleeping support",
+  "a two-way mirror for TV, conversation, and basic visibility",
+  "portable seated supports for use at a table, desk, or while traveling locally",
 ];
 
 const recoveryTips = [
-  "prepare your recovery area before surgery day",
-  "keep medications, water, chargers, and snacks nearby",
-  "use supportive cushions to reduce neck and shoulder tension",
-  "take approved movement breaks if permitted by your surgeon",
-  "try to maintain a consistent sleep schedule during recovery",
+  "set up your main recovery space before your surgery date",
+  "place eye drops, medications, water, chargers, and simple snacks within reach",
+  "use supportive padding to reduce pressure on the neck, shoulders, and chest",
+  "take only the breaks or position changes your surgeon has approved",
+  "keep bedtime and wake-up routines as consistent as possible",
 ];
 
 export default function SleepAfterVitrectomyArticlePage() {
@@ -127,27 +127,29 @@ export default function SleepAfterVitrectomyArticlePage() {
 
           <div className="mt-8 space-y-8 font-serif text-lg leading-8 text-neutral-800">
             <p>
-              Sleeping after vitrectomy surgery is often one of the most difficult parts of recovery, especially if your
-              surgeon has instructed you to remain face down during healing. Many patients are surprised by how
-              challenging the first few nights can feel when trying to stay comfortable for long periods of time.
+              Getting comfortable at night after vitrectomy surgery can be harder than many patients expect. If your
+              surgeon has asked you to stay face down, even ordinary rest can feel unfamiliar during the first stage of
+              healing.
             </p>
-            <p>The good news is that the right positioning and support equipment can make recovery much more manageable.</p>
+            <p>
+              With the right setup, however, sleeping and resting face down can become much more practical. Supportive
+              equipment helps reduce strain so you can focus on following your surgeon&apos;s recovery instructions.
+            </p>
 
             <section className="space-y-4">
               <h2 className="font-sans text-2xl font-black uppercase tracking-[0.08em] text-[#081936]">
                 Why Face Down Positioning Matters
               </h2>
               <p>
-                After vitrectomy or macular hole surgery, many patients have a gas bubble placed inside the eye to help
-                support healing. Face down positioning helps keep that bubble in the correct position while the retina or
-                macula recovers.
+                After a vitrectomy, macular hole repair, or related retina procedure, your surgeon may place a gas
+                bubble inside the eye. Face-down positioning can help keep that bubble where it needs to be while the
+                retina or macula heals.
               </p>
               <p>
-                Every patient and procedure is different, so it is important to carefully follow the instructions
-                provided by your surgeon regarding positioning, sleep posture, and recovery time. Your doctor&apos;s
-                guidance should always take priority over general recovery information found online.
+                Positioning instructions are not one-size-fits-all. Your surgeon&apos;s directions for sleep posture,
+                daily positioning time, breaks, and activity limits should always come before general recovery advice.
               </p>
-              <p>Depending on your procedure, your surgeon may advise:</p>
+              <p>Your care team may give specific guidance on:</p>
               <ul className="list-disc space-y-2 pl-6">
                 {positionTips.map((item) => (
                   <li key={item}>{item}</li>
@@ -160,22 +162,21 @@ export default function SleepAfterVitrectomyArticlePage() {
                 Best Sleeping Positions After Vitrectomy Surgery
               </h2>
               <p>
-                For many patients, sleeping face down is recommended during recovery. While it may feel awkward at first,
-                proper support can significantly reduce strain on the neck, shoulders, and lower back.
+                Many patients are told to sleep face down for part of their recovery. It can feel awkward at first, but
+                a stable support system can make the position easier on your neck, shoulders, and back.
               </p>
-              <p>Some patients also find relief by:</p>
+              <p>Depending on your surgeon&apos;s instructions, comfort may improve with:</p>
               <ul className="list-disc space-y-2 pl-6">
                 {comfortTips.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
               <p>
-                In most cases, sleeping flat on your back is discouraged while the gas bubble remains in the eye, since
-                it may affect healing or place pressure in the wrong area.
+                Sleeping flat on your back is often restricted while a gas bubble is present, because it can move the
+                bubble away from the area it is meant to support.
               </p>
               <p>
-                If you are unsure about which sleeping positions are safe for your recovery, it is always best to confirm
-                directly with your surgeon or medical team.
+                If you are unsure whether a position is allowed, check with your surgeon or clinic before trying it.
               </p>
             </section>
 
@@ -184,8 +185,8 @@ export default function SleepAfterVitrectomyArticlePage() {
                 Common Challenges During Recovery
               </h2>
               <p>
-                The biggest issue many patients experience is discomfort from maintaining positioning for extended
-                periods of time. Common complaints include:
+                The hardest part is often the repetition: staying positioned hour after hour can put stress on the body.
+                Patients commonly report:
               </p>
               <ul className="list-disc space-y-2 pl-6">
                 {challenges.map((item) => (
@@ -193,10 +194,10 @@ export default function SleepAfterVitrectomyArticlePage() {
                 ))}
               </ul>
               <p>
-                Many people initially try using regular pillows or improvised setups at home, but these often become
-                uncomfortable very quickly.
+                Standard pillows and improvised setups may work briefly, but they often shift, compress, or create
+                pressure points during longer rest periods.
               </p>
-              <p>The first few days are usually the hardest while your body adjusts to the positioning requirements.</p>
+              <p>For many people, the adjustment period is most noticeable during the first several days.</p>
             </section>
 
             <section className="space-y-4">
@@ -204,23 +205,23 @@ export default function SleepAfterVitrectomyArticlePage() {
                 Equipment That Can Make Recovery Easier
               </h2>
               <p>
-                Specialized face down recovery equipment is designed to make positioning more comfortable and sustainable
-                throughout the healing process.
+                Face-down recovery equipment is built to support the head, chest, and upper body while keeping the face
+                clear and the posture more stable.
               </p>
-              <p>Depending on the patient&apos;s needs, this may include:</p>
+              <p>A complete recovery setup may include:</p>
               <ul className="list-disc space-y-2 pl-6">
                 {equipment.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
               <p>
-                The goal is simply to make recovery more manageable while reducing unnecessary physical strain during
-                long periods of positioning.
+                The purpose is not to replace medical instructions. It is to make those instructions easier to follow by
+                reducing avoidable discomfort.
               </p>
               <p>
-                At Vitrectomy Healing, we provide clean, sanitized face down recovery equipment for Canadian vitrectomy
-                and retina surgery patients. Equipment can be delivered, set up, and picked up directly from your home
-                to help simplify the recovery process.
+                Vitrectomy Healing provides sanitized face-down recovery equipment for Canadian patients recovering from
+                vitrectomy and retina surgery. Delivery, setup, and pickup options help reduce the amount of lifting,
+                moving, and planning required around surgery day.
               </p>
             </section>
 
@@ -228,15 +229,15 @@ export default function SleepAfterVitrectomyArticlePage() {
               <h2 className="font-sans text-2xl font-black uppercase tracking-[0.08em] text-[#081936]">
                 Tips for a More Comfortable Recovery
               </h2>
-              <p>A few small adjustments can make a big difference during recovery:</p>
+              <p>A little planning before surgery can make the recovery period smoother:</p>
               <ul className="list-disc space-y-2 pl-6">
                 {recoveryTips.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
               <p>
-                Most importantly, be patient with yourself during the process. Face down recovery can feel frustrating at
-                first, but many patients gradually adapt once they find a setup that works for them.
+                Give yourself time to adapt. Face-down recovery can be tiring at first, but the right arrangement often
+                makes each day more manageable.
               </p>
             </section>
 
@@ -245,13 +246,13 @@ export default function SleepAfterVitrectomyArticlePage() {
                 Final Thoughts
               </h2>
               <p>
-                Vitrectomy recovery can be physically and mentally demanding, especially when face down positioning is
-                required for several days or weeks. Having the right support system in place can make the process
-                significantly more comfortable and help reduce unnecessary stress during healing.
+                Recovery after vitrectomy can be demanding, particularly when strict face-down positioning is part of
+                your surgeon&apos;s plan. Preparing your space and support equipment ahead of time can reduce stress once
+                you are home.
               </p>
               <p>
-                If you need face down recovery equipment in a Canadian service area, Vitrectomy Healing provides premium
-                recovery equipment with delivery, setup, and pickup options.
+                For patients in Canadian service areas, Vitrectomy Healing offers premium face-down recovery equipment
+                rentals with support for delivery, setup, and pickup.
               </p>
             </section>
 
