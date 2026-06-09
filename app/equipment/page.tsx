@@ -43,7 +43,7 @@ const sleepImages: EquipmentImage[] = [
     label: "Mattress Attachment",
   },
   {
-    src: "/sleep2.jpg",
+    src: "/sleep4.webp",
     alt: "Face-down recovery bed setup",
     label: "Face Down Bed",
   },
