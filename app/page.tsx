@@ -80,7 +80,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-xl">
             <div className="relative aspect-[2.05/1] overflow-hidden rounded-[1.5rem] bg-white shadow-2xl shadow-neutral-950/15 sm:aspect-[2.35/1]">
               <Image
-                src="/hero-banner.jpg"
+                src="/sleep4.webp"
                 alt="Patient using face down recovery bed rental equipment for vitrectomy recovery"
                 fill
                 priority
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="mx-auto hidden max-w-7xl px-10 pb-10 pt-5 lg:block">
           <div className="relative aspect-[2.7/1] overflow-hidden rounded-[2rem] bg-white shadow-2xl shadow-neutral-950/15">
             <Image
-              src="/hero2.jpg"
+              src="/sleep4.webp"
               alt="Patient using face down recovery equipment rental setup in Canada"
               fill
               priority
