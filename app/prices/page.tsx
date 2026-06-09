@@ -17,6 +17,7 @@ const packages = [
     subtitle: "Complete seated and sleep support for face-down recovery",
     price: "$395",
     duration: "/ 1st Week",
+    secondWeek: "2nd week: $200 + tax",
     ctaTheme: "dark",
     image: "/sleep2.jpg",
     imageAlt: "Face down recovery bed included with the Comfort Package",
@@ -29,13 +30,13 @@ const packages = [
       "Headrest fitted sheets (1 per device)",
       "Delivery, Set Up & Pick Up (free within 30 km)",
     ],
-    exclusions: ["2nd week: $200 + tax"],
   },
   {
     title: "Essential Support Package",
     subtitle: "Core face-down equipment for focused recovery",
     price: "$295",
     duration: "/ 1st Week",
+    secondWeek: "2nd week: $150 + tax",
     ctaTheme: "teal",
     image: "/seated3.webp",
     imageAlt: "Face down chair included with the Essential Support Package",
@@ -46,9 +47,8 @@ const packages = [
       "1 Sleep Device (Mattress Attachment or Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
       "Headrest fitted sheets (1 per device)",
-      "Delivery, Set Up & Pick Up not included",
     ],
-    exclusions: ["2nd week: $150 + tax"],
+    exclusions: ["Delivery, Set Up & Pick Up not included"],
   },
 ];
 
@@ -129,6 +129,7 @@ export default function PricesPage() {
                 <div className="mb-4 mt-3 text-center sm:my-5">
                   <span className="font-serif text-4xl font-bold italic text-teal-500 sm:text-5xl lg:text-6xl">{pkg.price}</span>
                   <span className="ml-2 font-serif text-sm font-bold text-neutral-800 sm:text-base lg:text-lg">{pkg.duration}</span>
+                  <p className="mt-2 font-serif text-sm font-bold text-neutral-500 sm:text-base">{pkg.secondWeek}</p>
                 </div>
                 <ul className="grow divide-y divide-neutral-100 font-serif text-sm leading-6 text-neutral-800 sm:text-[0.95rem] sm:leading-7">
                   {pkg.features.map((feature) => (
