@@ -17,7 +17,7 @@ const packages = [
     duration: "/ 1st Week",
     secondWeek: "2nd week: $200 + tax",
     ctaTheme: "dark",
-    image: "/sleep2.jpg",
+    image: "/sleep1.webp",
     imageAlt: "Face down recovery bed included with the Comfort Package",
     imageClassName: "object-cover object-[center_45%]",
     orderClassName: "order-1 lg:order-none",
