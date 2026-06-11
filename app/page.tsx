@@ -65,10 +65,10 @@ export default function Home() {
       <section className="overflow-hidden bg-[#eee4e1]">
         <div className="mx-auto grid max-w-7xl gap-5 px-5 pb-8 pt-4 sm:px-8 sm:pb-12 sm:pt-6 lg:hidden">
           <div className="mx-auto max-w-xl text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.24em] text-teal-700">
+            <p className="mb-3 text-xs font-black uppercase leading-5 tracking-[0.16em] text-teal-700 sm:tracking-[0.24em]">
               Canada Vitrectomy Equipment
             </p>
-            <h1 className="whitespace-nowrap text-[2.28rem] font-black leading-[0.92] tracking-tight text-[#081936] min-[420px]:text-[2.45rem] sm:text-5xl">
+            <h1 className="text-balance text-[2.45rem] font-black leading-[0.95] tracking-tight text-[#081936] min-[420px]:text-[2.8rem] sm:text-5xl">
               Face Down Recovery Rentals
             </h1>
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-teal-400" />
@@ -92,13 +92,13 @@ export default function Home() {
             <div className="mt-5 flex flex-col gap-3">
               <a
                 href={`tel:${phoneNumber}`}
-                className="rounded-full bg-teal-400 px-6 py-4 text-center text-sm font-black uppercase tracking-[0.22em] text-white shadow-lg shadow-teal-700/20 transition hover:bg-teal-500"
+                className="mx-auto w-full max-w-md rounded-full bg-teal-400 px-5 py-4 text-center text-xs font-black uppercase tracking-[0.16em] text-white shadow-lg shadow-teal-700/20 transition hover:bg-teal-500 sm:text-sm sm:tracking-[0.22em]"
               >
                 Call Now: {displayPhoneNumber}
               </a>
               <Link
                 href="/prices"
-                className="rounded-full border border-neutral-950/15 bg-white/75 px-6 py-4 text-center text-sm font-black uppercase tracking-[0.18em] text-neutral-950 transition hover:bg-white"
+                className="mx-auto w-full max-w-md rounded-full border border-neutral-950/15 bg-white/75 px-5 py-4 text-center text-xs font-black uppercase tracking-[0.14em] text-neutral-950 transition hover:bg-white sm:text-sm sm:tracking-[0.18em]"
               >
                 View Prices
               </Link>
