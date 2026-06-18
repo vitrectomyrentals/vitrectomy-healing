@@ -1,6 +1,6 @@
-# fdr-site
+# vitrectomy-healing
 
-FDR Rentals website built with Next.js 15, TypeScript, the App Router, and Tailwind CSS.
+Vitrectomy Healing website built with Next.js 15, TypeScript, the App Router, and Tailwind CSS.
 
 ## Getting Started
 

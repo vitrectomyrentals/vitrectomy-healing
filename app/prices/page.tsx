@@ -2,71 +2,53 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata } from "../lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata, displayPhoneNumber, phoneNumber } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Face Down Recovery Equipment Rental Prices | Dallas-Fort Worth",
+  title: "Vitrectomy Recovery Equipment Rental Prices | Canada",
   description:
-    "Compare Dallas-Fort Worth face down recovery equipment rental packages for vitrectomy recovery, including face down chairs, beds, mattress attachments, mirrors, delivery, setup, and pickup.",
+    "Compare Canadian vitrectomy recovery equipment rental packages, including face down chairs, beds, mattress attachments, mirrors, delivery, setup, and pickup.",
   path: "/prices",
 });
 
 const packages = [
   {
-    title: "Extended Comfort Package",
-    subtitle: "Everything you need for a more comfortable recovery",
-    price: "$495",
-    duration: "/ 10 Days",
-    ctaTheme: "dark",
-    image: "/sleep2.jpg",
-    imageAlt: "Face down recovery bed included with the Extended Comfort Package",
-    imageClassName: "object-cover object-[center_45%]",
-    orderClassName: "order-2 lg:order-none",
-    features: [
-      "2 Seated Devices (Face Down Chair & Portable Seated Support)",
-      "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
-      "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
-      "Free Delivery, Set Up & Pick Up (within 20 miles)",
-    ],
-  },
-  {
-    label: "Most Popular",
-    title: "Complete Comfort Package",
-    subtitle: "Everything you need for a more comfortable recovery",
+    title: "Comfort Package",
+    subtitle: "Complete seated and sleep support for face-down recovery",
     price: "$395",
-    duration: "/ 1 Week",
-    featured: true,
-    ctaTheme: "teal",
-    image: "/chair.jpg",
-    imageAlt: "Face down chair included with the Complete Comfort Package",
-    imageClassName: "object-cover object-[center_25%]",
+    duration: "/ 1st Week",
+    secondWeek: "2nd week: $200 + tax",
+    ctaTheme: "dark",
+    image: "/sleep1.webp",
+    imageAlt: "Face down recovery bed included with the Comfort Package",
+    imageClassName: "object-cover object-[center_45%]",
     orderClassName: "order-1 lg:order-none",
     features: [
       "2 Seated Devices (Face Down Chair & Portable Seated Support)",
       "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
-      "Free Delivery, Set Up & Pick Up (within 20 miles)",
+      "Headrest fitted sheets (1 per device)",
+      "Delivery, Set Up & Pick Up (free within 30 km)",
     ],
   },
   {
-    title: "Core Recovery Package",
-    subtitle: "Essential face down equipment",
+    title: "Essential Support Package",
+    subtitle: "Core face-down equipment for focused recovery",
     price: "$295",
-    duration: "/ 1 Week",
-    ctaTheme: "dark",
+    duration: "/ 1st Week",
+    secondWeek: "2nd week: $150 + tax",
+    ctaTheme: "teal",
     image: "/seated3.webp",
-    imageAlt: "Portable seated face down support included with the Core Recovery Package",
+    imageAlt: "Face down chair included with the Essential Support Package",
     imageClassName: "object-cover object-[center_48%]",
-    orderClassName: "order-3 lg:order-none",
+    orderClassName: "order-2 lg:order-none",
     features: [
       "1 Seated Device (Face Down Chair or Portable Seated Support)",
       "1 Sleep Device (Mattress Attachment or Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
+      "Headrest fitted sheets (1 per device)",
     ],
-    exclusions: ["Delivery not included"],
+    exclusions: ["Delivery, Set Up & Pick Up not included"],
   },
 ];
 
@@ -92,10 +74,10 @@ export default function PricesPage() {
     itemListElement: packages.map((pkg) => ({
       "@type": "Offer",
       name: pkg.title,
-      price: pkg.price.replace("$", ""),
-      priceCurrency: "USD",
+      price: pkg.price.startsWith("$") ? pkg.price.replace("$", "") : undefined,
+      priceCurrency: "CAD",
       availability: "https://schema.org/InStock",
-      areaServed: "Dallas-Fort Worth",
+      areaServed: "Canada",
       description: `${pkg.subtitle}. ${pkg.features.join("; ")}.`,
       itemOffered: {
         "@type": "Service",
@@ -125,19 +107,12 @@ export default function PricesPage() {
             Choose the recovery package that best fits your needs
           </h1>
 
-          <div className="mx-auto mt-7 grid max-w-7xl gap-6 sm:mt-9 lg:grid-cols-3 lg:items-stretch lg:gap-6">
+          <div className="mx-auto mt-7 grid max-w-5xl gap-6 sm:mt-9 lg:grid-cols-2 lg:items-stretch lg:gap-6">
             {packages.map((pkg) => (
               <article
                 key={pkg.title}
-                className={`relative flex flex-col rounded-lg border bg-white p-4 shadow-sm sm:p-5 lg:p-6 ${pkg.orderClassName} ${
-                  pkg.featured ? "border-teal-400 ring-1 ring-teal-400" : "border-neutral-200"
-                }`}
+                className={`relative flex flex-col rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5 lg:p-6 ${pkg.orderClassName}`}
               >
-                {pkg.label ? (
-                  <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-400 px-5 py-2 text-[0.65rem] font-black uppercase leading-tight tracking-[0.18em] text-white sm:px-6 sm:py-2.5 sm:text-xs">
-                    {pkg.label}
-                  </div>
-                ) : null}
                 <div className="relative mb-4 h-52 overflow-hidden rounded-lg bg-neutral-100 sm:mb-5 sm:h-56 lg:h-60">
                   <Image
                     src={pkg.image}
@@ -154,6 +129,7 @@ export default function PricesPage() {
                 <div className="mb-4 mt-3 text-center sm:my-5">
                   <span className="font-serif text-4xl font-bold italic text-teal-500 sm:text-5xl lg:text-6xl">{pkg.price}</span>
                   <span className="ml-2 font-serif text-sm font-bold text-neutral-800 sm:text-base lg:text-lg">{pkg.duration}</span>
+                  <p className="mt-2 font-serif text-sm font-bold text-neutral-500 sm:text-base">{pkg.secondWeek}</p>
                 </div>
                 <ul className="grow divide-y divide-neutral-100 font-serif text-sm leading-6 text-neutral-800 sm:text-[0.95rem] sm:leading-7">
                   {pkg.features.map((feature) => (
@@ -170,19 +146,19 @@ export default function PricesPage() {
                   ))}
                 </ul>
                 <a
-                  href="tel:+14693001867"
+                  href={`tel:${phoneNumber}`}
                   className={`mt-4 flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-center font-serif text-sm font-bold uppercase tracking-wide text-white sm:mt-5 sm:min-h-14 ${
                     pkg.ctaTheme === "teal" ? "bg-teal-400 hover:bg-teal-500" : "bg-neutral-950 hover:bg-neutral-800"
                   }`}
                 >
-                  Call to Reserve: (469) 300-1867
+                  Call to Reserve: {displayPhoneNumber}
                 </a>
               </article>
             ))}
           </div>
 
           <p className="mx-auto mt-5 max-w-7xl text-center font-serif text-sm font-bold text-neutral-800 sm:text-base">
-            * $175/additional week if needed.
+            * Taxes apply. Please call for custom quotes, delivery details, and extension timing.
           </p>
 
           <div className="mt-7 text-center">

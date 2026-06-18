@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata } from "../lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata, contactEmail, displayPhoneNumber, phoneNumber, siteUrl } from "../lib/seo";
 
 type EquipmentImage = {
   src: string;
@@ -12,9 +12,9 @@ type EquipmentImage = {
 };
 
 export const metadata: Metadata = buildMetadata({
-  title: "Vitrectomy Recovery Equipment Rental | Dallas-Fort Worth",
+  title: "Vitrectomy Recovery Equipment Rental | Canada",
   description:
-    "View face down recovery equipment rentals for Dallas-Fort Worth patients, including face down chair rental, portable seated support, face down bed, mattress attachment, mirror, delivery, and setup.",
+    "View Canadian face down recovery equipment rentals, including face down chair rental, portable seated support, face down bed, mattress attachment, mirror, delivery, and setup.",
   path: "/equipment",
 });
 
@@ -43,7 +43,7 @@ const sleepImages: EquipmentImage[] = [
     label: "Mattress Attachment",
   },
   {
-    src: "/sleep2.jpg",
+    src: "/sleep4.webp",
     alt: "Face-down recovery bed setup",
     label: "Face Down Bed",
   },
@@ -78,11 +78,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>
@@ -154,9 +154,9 @@ export default function EquipmentPage() {
     serviceType: "Face down recovery equipment rental",
     url: absoluteUrl("/equipment"),
     provider: {
-      "@id": "https://facedownrecoveryrentals.com/#localbusiness",
+      "@id": `${siteUrl}/#localbusiness`,
     },
-    areaServed: "Dallas-Fort Worth",
+    areaServed: "Canada",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Face down recovery equipment",
@@ -271,10 +271,10 @@ export default function EquipmentPage() {
               See Prices
             </Link>
             <a
-              href="tel:+14693001867"
+              href={`tel:${phoneNumber}`}
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-teal-400 px-7 py-3 text-sm font-black uppercase tracking-[0.16em] text-white transition hover:bg-teal-500"
             >
-              Call Now: (469) 300-1867
+              Call Now: {displayPhoneNumber}
             </a>
           </div>
 
@@ -287,10 +287,10 @@ export default function EquipmentPage() {
           <div className="mx-auto mt-10 max-w-2xl text-center">
             <p className="text-sm font-black uppercase tracking-[0.16em]">Please call us for a custom quote</p>
             <a
-              href="tel:+14693001867"
+              href={`tel:${phoneNumber}`}
               className="mt-3 block font-serif text-lg font-bold underline decoration-neutral-300 underline-offset-4"
             >
-              (469) 300-1867
+              {displayPhoneNumber}
             </a>
             <p className="mt-8 text-sm font-black uppercase leading-6 tracking-[0.14em]">
               Price matching policy

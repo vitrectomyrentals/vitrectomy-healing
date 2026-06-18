@@ -119,7 +119,7 @@ function createPdf(submission: AgreementSubmission) {
   }
 
   // PDF generation: the completed agreement is assembled here from the same terms shown on the page.
-  textLine("Face Down Recovery Rentals-Agreement", { size: 14, bold: true, gap: 21 });
+  textLine("Vitrectomy Healing Agreement", { size: 14, bold: true, gap: 21 });
   textLine(`Submission timestamp: ${submission.submittedAt}`, { size: 9.5 });
   y -= 7;
 
@@ -196,8 +196,8 @@ async function sendAgreementEmail({
   pdf: Buffer;
 }) {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromAddress = "agreements@facedownrecoveryrentals.com";
-  const replyToAddress = process.env.ADMIN_EMAIL || "fdrrentals@gmail.com";
+  const fromAddress = "agreements@vitrectomyhealing.com";
+  const replyToAddress = process.env.ADMIN_EMAIL || "info@vitrectomyhealing.com";
 
   if (!apiKey) {
     throw new Error("RESEND_API_KEY is not configured");
@@ -218,7 +218,7 @@ async function sendAgreementEmail({
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: `Face Down Recovery Rentals <${fromAddress}>`,
+      from: `Vitrectomy Healing <${fromAddress}>`,
       to: [to],
       subject,
       html,
@@ -271,7 +271,7 @@ export async function POST(request: Request) {
 
     const pdf = createPdf(submission);
     const filename = `Agreement-${sanitizeFilePart(submission.renterName)}-${sanitizeFilePart(submission.date)}.pdf`;
-    const adminEmail = process.env.ADMIN_EMAIL || "fdrrentals@gmail.com";
+    const adminEmail = process.env.ADMIN_EMAIL || "info@vitrectomyhealing.com";
 
     await Promise.all([
       sendAgreementEmail({
@@ -283,7 +283,7 @@ export async function POST(request: Request) {
       }),
       sendAgreementEmail({
         to: submission.customerEmail,
-        subject: "Your Face Down Recovery Rentals Agreement",
+        subject: "Your Vitrectomy Healing Agreement",
         html: "<p>Thank you. A copy of your completed rental agreement is attached for your records.</p>",
         filename,
         pdf,

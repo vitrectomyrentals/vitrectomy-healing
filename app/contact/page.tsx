@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, breadcrumbSchema, buildMetadata, localBusinessSchema } from "../lib/seo";
+import { JsonLd, breadcrumbSchema, buildMetadata, contactEmail, displayPhoneNumber, localBusinessSchema, phoneNumber } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact FDR Rentals | Face Down Recovery Equipment Dallas-Fort Worth",
+  title: "Contact Vitrectomy Healing | Canada Vitrectomy Recovery Equipment",
   description:
-    "Contact Face Down Recovery Rentals to reserve vitrectomy recovery equipment, face down chair rentals, and recovery support equipment in Dallas-Fort Worth.",
+    "Contact Vitrectomy Healing to reserve Canadian vitrectomy recovery equipment, face down chair rentals, and face-down recovery support.",
   path: "/contact",
 });
 
@@ -19,11 +19,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               method="POST"
               className="mt-8 space-y-5"
             >
-              <input type="hidden" name="_subject" value="New Face Down Recovery Rentals inquiry" />
+              <input type="hidden" name="_subject" value="New Vitrectomy Healing inquiry" />
               <div>
                 <p className="font-serif text-base text-neutral-800">Name</p>
                 <div className="mt-2 grid gap-4 sm:grid-cols-2">
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 <label className="mt-3 flex gap-3 text-xs leading-5 text-neutral-700">
                   <input className="mt-1 size-4 shrink-0" name="sms_consent" type="checkbox" value="yes" />
                   <span>
-                    I agree to receive messages from Face Down Recovery Rentals regarding booking updates, delivery
+                    I agree to receive messages from Vitrectomy Healing regarding booking updates, delivery
                     coordination, and customer support. Message and data rates may apply. Reply STOP to opt out.
                   </span>
                 </label>
@@ -121,13 +121,13 @@ export default function ContactPage() {
 
           <aside className="text-center font-serif text-lg leading-8 text-neutral-800 lg:pt-20">
             <p className="font-sans text-sm font-black uppercase tracking-[0.18em] text-neutral-900">Contact Us:</p>
-            <a className="mt-2 block text-xl font-bold text-teal-600" href="tel:+14693001867">
-              (469) 300-1867
+            <a className="mt-2 block text-xl font-bold text-teal-600" href={`tel:${phoneNumber}`}>
+              {displayPhoneNumber}
             </a>
             <p className="mt-8 font-sans text-sm font-black uppercase tracking-[0.18em] text-neutral-900">
               Business Hours:
             </p>
-            <p className="mt-2">Monday - Sunday: 9am to 9pm CT</p>
+            <p className="mt-2">Monday - Sunday: 9am to 9pm MST</p>
           </aside>
         </div>
       </section>

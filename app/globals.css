@@ -13,6 +13,11 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
+  overflow-x: clip;
+}
+
+html {
+  overflow-x: clip;
 }
 
 summary::-webkit-details-marker {

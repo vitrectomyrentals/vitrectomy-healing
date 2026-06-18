@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, breadcrumbSchema, buildMetadata } from "../lib/seo";
+import { JsonLd, breadcrumbSchema, buildMetadata, contactEmail, displayPhoneNumber, phoneNumber } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Face Down Recovery Equipment Rental FAQs | Dallas-Fort Worth",
+  title: "Vitrectomy Recovery Equipment Rental FAQs | Canada",
   description:
-    "Answers to common questions about face down recovery equipment rental, delivery, setup, payment, insurance receipts, and retina surgery recovery support in Dallas-Fort Worth.",
+    "Answers to common questions about Canadian face down recovery equipment rental, delivery, setup, payment, insurance receipts, and retina surgery recovery support.",
   path: "/faqs",
 });
 
@@ -38,35 +38,11 @@ const faqs = [
     answer: ["Payment can be made with cash, debit card, or credit card."],
   },
   {
-    question: "Where can I get my procedure done in Dallas?",
-    answer: ["Below is a list of eye clinics in DFW that have retina specialists."],
-  },
-];
-
-const clinics = [
-  {
-    name: "Texas Retina Associates",
-    website: "www.texasretina.com",
-    address: ["9600 N. Central Expressway, Suite 100", "Dallas, TX 75231"],
-    phone: "(214) 692-6941",
-  },
-  {
-    name: "Retina Specialists",
-    website: "www.retinaspecialists.com",
-    address: ["10740 North Central Expressway, Suite 100", "Dallas, TX 75231"],
-    phone: "(972) 833-8042",
-  },
-  {
-    name: "Dallas Retina Center",
-    website: "www.dallasretina.com",
-    address: ["6000 West Spring Creek Parkway Suite 215", "Plano, Texas, 75024"],
-    phone: "(469) 430-8375",
-  },
-  {
-    name: "Retina Center of Texas",
-    website: "www.retinacentertx.com",
-    address: ["3455 Locke Ave, #310", "Fort Worth, TX 76107"],
-    phone: "(817) 865-6800",
+    question: "What areas do you serve?",
+    answer: [
+      "Vitrectomy Healing serves Canadian patients across Alberta, Saskatchewan, Manitoba, British Columbia, and Ontario service areas.",
+      "Please call to confirm delivery timing and availability for your city before surgery.",
+    ],
   },
 ];
 
@@ -79,11 +55,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>
@@ -142,21 +118,15 @@ export default function FaqsPage() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-7 font-serif text-base leading-7 text-neutral-800 sm:grid-cols-2">
-            {clinics.map((clinic) => (
-              <article key={clinic.name}>
-                <h3 className="font-sans font-black text-neutral-800">{clinic.name}</h3>
-                <p>
-                  Website:{" "}
-                  <a className="text-teal-600 underline underline-offset-4" href={`https://${clinic.website}`}>
-                    {clinic.website}
-                  </a>
-                </p>
-                <p>Address: {clinic.address[0]}</p>
-                <p>{clinic.address[1]}</p>
-                <p>Phone: {clinic.phone}</p>
-              </article>
-            ))}
+          <div className="mt-10 rounded-lg bg-neutral-50 p-6 text-center font-serif text-base leading-7 text-neutral-800">
+            <p className="font-sans text-sm font-black uppercase tracking-[0.18em] text-neutral-900">
+              Service Areas
+            </p>
+            <p className="mt-3">
+              Calgary, Edmonton, Red Deer, Airdrie, Saskatoon, Regina, Winnipeg, Vancouver, Surrey, Richmond,
+              New Westminster, Victoria, Toronto, Ottawa, Hamilton, Burlington, Oakville, Milton, Mississauga,
+              Brantford, Cambridge, and Windsor.
+            </p>
           </div>
         </div>
       </section>

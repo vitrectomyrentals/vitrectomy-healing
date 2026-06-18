@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata } from "../lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata, contactEmail, displayPhoneNumber, phoneNumber } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Recovery Guides for Vitrectomy Patients | FDR Rentals Dallas-Fort Worth",
+  title: "Recovery Guides for Vitrectomy Patients | Vitrectomy Healing",
   description:
-    "Helpful recovery guides for vitrectomy and face down positioning patients in Dallas-Fort Worth, including sleep support and face down recovery equipment tips.",
+    "Helpful recovery guides for Canadian vitrectomy and face down positioning patients, including sleep support and face down recovery equipment tips.",
   path: "/recovery-guides",
 });
 
@@ -19,11 +19,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>

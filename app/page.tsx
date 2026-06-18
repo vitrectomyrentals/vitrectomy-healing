@@ -1,77 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "./components/SiteHeader";
-import { JsonLd, buildMetadata, localBusinessSchema, websiteSchema } from "./lib/seo";
+import { JsonLd, buildMetadata, contactEmail, displayPhoneNumber, localBusinessSchema, phoneNumber, websiteSchema } from "./lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Face Down Recovery Equipment Rentals in Dallas-Fort Worth | FDR Rentals",
+  title: "Vitrectomy Recovery Equipment Rentals in Canada | Vitrectomy Healing",
   description:
-    "Rent face down recovery equipment in Dallas-Fort Worth for vitrectomy and retina surgery recovery. Packages include chairs, beds, mattress attachments, mirrors, delivery, setup, and pickup.",
+    "Rent face-down vitrectomy recovery equipment in Canada. Vitrectomy Healing provides chairs, beds, mattress attachments, mirrors, delivery, setup, and pickup for retina surgery recovery.",
 });
 
 const packages = [
   {
-    title: "Extended Comfort Package",
-    subtitle: "Everything you need for a more comfortable recovery",
-    price: "$495",
-    duration: "/ 10 Days",
-    ctaTheme: "dark",
-    image: "/sleep2.jpg",
-    imageAlt: "Face down recovery bed included with the Extended Comfort Package",
-    imageClassName: "object-cover object-[center_45%]",
-    orderClassName: "order-2 lg:order-none",
-    features: [
-      "2 Seated Devices (Face Down Chair & Portable Seated Support)",
-      "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
-      "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
-      "Free Delivery, Set Up & Pick Up (within 20 miles)",
-    ],
-  },
-  {
-    label: "Most Popular",
-    title: "Complete Comfort Package",
-    subtitle: "Everything you need for a more comfortable recovery",
+    title: "Comfort Package",
+    subtitle: "Complete seated and sleep support for face-down recovery",
     price: "$395",
-    duration: "/ 1 Week",
-    featured: true,
-    ctaTheme: "teal",
-    image: "/chair.jpg",
-    imageAlt: "Face down chair included with the Complete Comfort Package",
-    imageClassName: "object-cover object-[center_25%]",
+    duration: "/ 1st Week",
+    secondWeek: "2nd week: $200 + tax",
+    ctaTheme: "dark",
+    image: "/sleep1.webp",
+    imageAlt: "Face down recovery bed included with the Comfort Package",
+    imageClassName: "object-cover object-[center_45%]",
     orderClassName: "order-1 lg:order-none",
     features: [
       "2 Seated Devices (Face Down Chair & Portable Seated Support)",
       "2 Sleep Devices (Mattress Attachment & Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
-      "Free Delivery, Set Up & Pick Up (within 20 miles)",
+      "Headrest fitted sheets (1 per device)",
+      "Delivery, Set Up & Pick Up (free within 30 km)",
     ],
   },
   {
-    title: "Core Recovery Package",
-    subtitle: "Essential face down equipment",
+    title: "Essential Support Package",
+    subtitle: "Core face-down equipment for focused recovery",
     price: "$295",
-    duration: "/ 1 Week",
-    ctaTheme: "dark",
+    duration: "/ 1st Week",
+    secondWeek: "2nd week: $150 + tax",
+    ctaTheme: "teal",
     image: "/seated3.webp",
-    imageAlt: "Portable seated face down support included with the Core Recovery Package",
+    imageAlt: "Face down chair included with the Essential Support Package",
     imageClassName: "object-cover object-[center_48%]",
-    orderClassName: "order-3 lg:order-none",
+    orderClassName: "order-2 lg:order-none",
     features: [
       "1 Seated Device (Face Down Chair or Portable Seated Support)",
       "1 Sleep Device (Mattress Attachment or Face Down Bed)",
       "1 Mirror (Watch TV & interact with others)",
-      "Fresh Covers Included",
+      "Headrest fitted sheets (1 per device)",
     ],
-    exclusions: ["Delivery not included"],
+    exclusions: ["Delivery, Set Up & Pick Up not included"],
   },
 ];
 
 const heroFeatures = [
-  "Stay pain-free during long recovery hours",
-  "Set up in minutes - no confusion, no stress",
-  "Delivered, set up, and ready to use - without lifting a finger",
+  "Canadian provider of retina surgery recovery equipment",
+  "Delivered, set up, and picked up by trained support",
+  "Comfortable seated and sleep options for face-down recovery",
 ];
 
 export default function Home() {
@@ -83,22 +65,22 @@ export default function Home() {
       <section className="overflow-hidden bg-[#eee4e1]">
         <div className="mx-auto grid max-w-7xl gap-5 px-5 pb-8 pt-4 sm:px-8 sm:pb-12 sm:pt-6 lg:hidden">
           <div className="mx-auto max-w-xl text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.24em] text-teal-700">
-              Dallas-Fort Worth
+            <p className="mb-3 text-xs font-black uppercase leading-5 tracking-[0.16em] text-teal-700 sm:tracking-[0.24em]">
+              Canada Vitrectomy Equipment
             </p>
-            <h1 className="whitespace-nowrap text-[2.28rem] font-black leading-[0.92] tracking-tight text-[#081936] min-[420px]:text-[2.45rem] sm:text-5xl">
-              Face-Down Rentals
+            <h1 className="text-balance text-[2.45rem] font-black leading-[0.95] tracking-tight text-[#081936] min-[420px]:text-[2.8rem] sm:text-5xl">
+              Face Down Recovery Rentals
             </h1>
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-teal-400" />
             <p className="mx-auto mt-4 max-w-lg text-pretty text-base leading-7 text-neutral-800 sm:text-lg">
-              Home delivery & setup throughout Dallas-Fort Worth.
+              Premium face-down recovery equipment rentals with delivery, setup, and pickup across Canadian service areas.
             </p>
           </div>
 
           <div className="relative mx-auto w-full max-w-xl">
             <div className="relative aspect-[2.05/1] overflow-hidden rounded-[1.5rem] bg-white shadow-2xl shadow-neutral-950/15 sm:aspect-[2.35/1]">
               <Image
-                src="/hero-banner.jpg"
+                src="/sleep4.webp"
                 alt="Patient using face down recovery bed rental equipment for vitrectomy recovery"
                 fill
                 priority
@@ -109,14 +91,14 @@ export default function Home() {
             </div>
             <div className="mt-5 flex flex-col gap-3">
               <a
-                href="tel:+14693001867"
-                className="rounded-full bg-teal-400 px-6 py-4 text-center text-sm font-black uppercase tracking-[0.22em] text-white shadow-lg shadow-teal-700/20 transition hover:bg-teal-500"
+                href={`tel:${phoneNumber}`}
+                className="mx-auto w-full max-w-md rounded-full bg-teal-400 px-5 py-4 text-center text-xs font-black uppercase tracking-[0.16em] text-white shadow-lg shadow-teal-700/20 transition hover:bg-teal-500 sm:text-sm sm:tracking-[0.22em]"
               >
-                Call Now: (469) 300-1867
+                Call Now: {displayPhoneNumber}
               </a>
               <Link
                 href="/prices"
-                className="rounded-full border border-neutral-950/15 bg-white/75 px-6 py-4 text-center text-sm font-black uppercase tracking-[0.18em] text-neutral-950 transition hover:bg-white"
+                className="mx-auto w-full max-w-md rounded-full border border-neutral-950/15 bg-white/75 px-5 py-4 text-center text-xs font-black uppercase tracking-[0.14em] text-neutral-950 transition hover:bg-white sm:text-sm sm:tracking-[0.18em]"
               >
                 View Prices
               </Link>
@@ -139,8 +121,8 @@ export default function Home() {
         <div className="mx-auto hidden max-w-7xl px-10 pb-10 pt-5 lg:block">
           <div className="relative aspect-[2.7/1] overflow-hidden rounded-[2rem] bg-white shadow-2xl shadow-neutral-950/15">
             <Image
-              src="/hero2.jpg"
-              alt="Patient using face down recovery equipment rental setup in Dallas-Fort Worth"
+              src="/sleep4.webp"
+              alt="Patient using face down recovery equipment rental setup in Canada"
               fill
               priority
               quality={95}
@@ -150,20 +132,20 @@ export default function Home() {
           </div>
 
           <div className="mx-auto mt-5 max-w-5xl text-center">
-            <p className="mb-2 text-xs font-black uppercase tracking-[0.28em] text-teal-700">Dallas-Fort Worth</p>
+            <p className="mb-2 text-xs font-black uppercase tracking-[0.28em] text-teal-700">Canada Vitrectomy Equipment</p>
             <h1 className="text-balance text-6xl font-black leading-[0.92] tracking-tight text-[#081936] xl:text-7xl">
-              Face-Down Rentals
+              Face Down Recovery Rentals
             </h1>
             <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-teal-400" />
             <p className="mx-auto mt-3 max-w-2xl text-pretty text-lg leading-8 text-neutral-800">
-              Home delivery & setup throughout Dallas-Fort Worth.
+              Premium face-down recovery equipment rentals with delivery, setup, and pickup across Canadian service areas.
             </p>
             <div className="mt-5 flex justify-center gap-4">
               <a
-                href="tel:+14693001867"
+                href={`tel:${phoneNumber}`}
                 className="rounded-full bg-teal-400 px-7 py-4 text-sm font-black uppercase tracking-[0.22em] text-white shadow-lg shadow-teal-700/20 transition hover:bg-teal-500"
               >
-                Call Now: (469) 300-1867
+                Call Now: {displayPhoneNumber}
               </a>
               <Link
                 href="/prices"
@@ -190,19 +172,12 @@ export default function Home() {
       </section>
 
       <section id="prices" className="bg-neutral-50 px-4 pb-7 pt-6 sm:px-8 lg:pb-9 lg:pt-8">
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3 lg:items-start lg:gap-6">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2 lg:items-start lg:gap-6">
           {packages.map((pkg) => (
             <article
               key={pkg.title}
-              className={`relative rounded-xl border bg-white p-4 shadow-sm sm:p-5 lg:p-6 ${pkg.orderClassName} ${
-                pkg.featured ? "border-teal-400 ring-1 ring-teal-400" : "border-neutral-200"
-              }`}
+              className={`relative rounded-xl border border-neutral-200 bg-white p-4 shadow-sm sm:p-5 lg:p-6 ${pkg.orderClassName}`}
             >
-              {pkg.label ? (
-                <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-400 px-5 py-2 text-[0.65rem] font-black uppercase leading-tight tracking-[0.18em] text-white sm:px-6 sm:py-2.5 sm:text-xs">
-                  {pkg.label}
-                </div>
-              ) : null}
               <div className="relative mb-4 h-52 overflow-hidden rounded-lg bg-neutral-100 sm:mb-5 sm:h-56 lg:h-60">
                 <Image
                   src={pkg.image}
@@ -219,6 +194,7 @@ export default function Home() {
               <div className="mb-4 mt-3 text-center sm:my-5">
                 <span className="font-serif text-4xl font-bold italic text-teal-500 sm:text-5xl lg:text-6xl">{pkg.price}</span>
                 <span className="ml-2 font-serif text-sm font-bold text-neutral-800 sm:text-base lg:text-lg">{pkg.duration}</span>
+                <p className="mt-2 font-serif text-sm font-bold text-neutral-500 sm:text-base">{pkg.secondWeek}</p>
               </div>
               <ul className="divide-y divide-neutral-100 font-serif text-sm leading-6 text-neutral-800 sm:text-[0.95rem] sm:leading-7">
                 {pkg.features.map((feature) => (
@@ -235,18 +211,18 @@ export default function Home() {
                 ))}
               </ul>
               <a
-                href="tel:+14693001867"
+                href={`tel:${phoneNumber}`}
                 className={`mt-4 flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-center font-serif text-sm font-bold uppercase tracking-wide text-white sm:mt-5 sm:min-h-14 sm:px-6 sm:text-base ${
                   pkg.ctaTheme === "teal" ? "bg-teal-400 hover:bg-teal-500" : "bg-neutral-950 hover:bg-neutral-800"
                 }`}
               >
-                Call to Reserve: (469) 300-1867
+                Call to Reserve: {displayPhoneNumber}
               </a>
             </article>
           ))}
         </div>
         <p className="mx-auto mt-5 max-w-7xl text-center font-serif text-sm font-bold text-neutral-800 sm:text-base">
-          * $175/additional week if needed.
+          * Taxes apply. Please call for custom quotes, delivery details, and extension timing.
         </p>
       </section>
 
@@ -254,7 +230,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="relative aspect-[1.04/1] overflow-hidden rounded-xl bg-neutral-100 shadow-xl shadow-neutral-950/10">
             <Image
-              src="/chair.jpg"
+              src="/seated2.webp"
               alt="Patient using a seated face down chair rental for retina surgery recovery"
               fill
               quality={92}
@@ -268,8 +244,8 @@ export default function Home() {
               Comfortable options for sitting, sleeping, and staying connected.
             </h2>
             <p className="mt-5 text-lg leading-8 text-neutral-700">
-              Choose the package that matches your recovery plan, then reserve by phone. Equipment is cleaned, prepared,
-              delivered, set up, and picked up so the recovery process feels simpler from day one.
+              Choose the package that matches your retina specialist&apos;s recovery plan, then reserve by phone. Equipment is
+              cleaned, prepared, delivered, set up, and picked up so face-down recovery feels simpler from day one.
             </p>
             <div className="mt-7 flex justify-center lg:justify-start">
               <Link
@@ -294,10 +270,11 @@ export default function Home() {
           <h2 className="mt-5 font-serif text-2xl leading-tight text-neutral-900 sm:text-3xl">
             Free Delivery, Setup & Pickup
             <br />
-            (Within 20 Miles)
+            (Within 30 km)
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm font-black uppercase leading-6 tracking-[0.2em]">
-            Dallas - Fort Worth - Plano - Irving - Arlington - Frisco
+            Calgary - Edmonton - Red Deer - Saskatoon - Regina - Winnipeg - Vancouver - Surrey - Toronto - Ottawa -
+            Hamilton - Mississauga - Windsor
           </p>
         </div>
       </section>
@@ -312,11 +289,11 @@ export default function Home() {
             <Link href="/privacy-policy">Privacy Policy</Link>
           </nav>
           <div className="font-serif text-lg leading-8 text-white/45">
-            <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-              info@fdrrentals.com
+            <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+              {contactEmail}
             </a>
-            <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-              (469) 300-1867
+            <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+              {displayPhoneNumber}
             </a>
           </div>
         </div>

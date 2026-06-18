@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
-import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata } from "../lib/seo";
+import { JsonLd, absoluteUrl, breadcrumbSchema, buildMetadata, contactEmail, displayPhoneNumber, phoneNumber, siteName, siteUrl } from "../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Vitrectomy Recovery Positioning Guide | Dallas-Fort Worth",
+  title: "Vitrectomy Recovery Positioning Guide | Canada",
   description:
-    "Learn about vitrectomy recovery positioning, face down recovery support, and equipment options for Dallas-Fort Worth retina surgery patients.",
+    "Learn about vitrectomy recovery positioning, face down recovery support, and equipment options for Canadian retina surgery patients.",
   path: "/vitrectomy-recovery",
 });
 
@@ -55,11 +55,11 @@ function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </nav>
         <div className="font-serif text-lg leading-8 text-white/45">
-          <a className="block underline decoration-white/15 underline-offset-4" href="mailto:info@fdrrentals.com">
-            info@fdrrentals.com
+          <a className="block underline decoration-white/15 underline-offset-4" href={`mailto:${contactEmail}`}>
+            {contactEmail}
           </a>
-          <a className="block underline decoration-white/15 underline-offset-4" href="tel:+14693001867">
-            (469) 300-1867
+          <a className="block underline decoration-white/15 underline-offset-4" href={`tel:${phoneNumber}`}>
+            {displayPhoneNumber}
           </a>
         </div>
       </div>
@@ -94,7 +94,7 @@ export default function VitrectomyRecoveryPage() {
       audienceType: "Patients recovering from vitrectomy or retina surgery",
     },
     publisher: {
-      "@id": "https://facedownrecoveryrentals.com/#localbusiness",
+      "@id": `${siteUrl}/#localbusiness`,
     },
   };
 
@@ -188,8 +188,8 @@ export default function VitrectomyRecoveryPage() {
             </ul>
             <p className="mt-8 text-center text-sm font-bold leading-7 text-neutral-700">
               Care instructions adapted under license by your healthcare professional. If you have questions about a
-              medical condition or these instructions, always ask your healthcare professional. FDR Rentals LLC disclaims
-              any warranty or liability for your use of this information.
+              medical condition or these instructions, always ask your healthcare professional. {siteName} does not make
+              medical claims and recommends following your surgeon&apos;s instructions.
             </p>
           </article>
         </div>

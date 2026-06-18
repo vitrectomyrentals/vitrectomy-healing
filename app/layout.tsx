@@ -5,11 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   ...buildMetadata({
-    title: "Face Down Recovery Rentals | Dallas-Fort Worth",
+    title: "Vitrectomy Healing | Canada Vitrectomy Recovery Equipment",
     description:
-      "Face down recovery equipment rentals with delivery and setup throughout Dallas-Fort Worth for vitrectomy and retina surgery recovery.",
+      "Canadian vitrectomy recovery equipment rentals with delivery, setup, and pickup for face-down retina surgery recovery.",
   }),
-  applicationName: "Face Down Recovery Rentals",
+  applicationName: "Vitrectomy Healing",
   category: "medical equipment rental",
 };
 
